@@ -173,12 +173,15 @@
                 }
             }];
 #else
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location is Disabled"
-                message:@"To use location, go to your Settings App > Privacy > Location Services."
-                delegate:self
-                cancelButtonTitle:@"Cancel"
-                otherButtonTitles:nil];
-            [alert show];
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Dịch vụ vị trí đã bị Tắt" message:@"Để sử dụng vị trí, vui lòng đi đến cài đặt." preferredStyle:UIAlertControllerStyleAlert];
+             UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Huỷ" style:UIAlertActionStyleCancel handler:nil];
+             [alert addAction:cancelAction];
+
+             UIViewController * _Nullable topController = UIApplication.sharedApplication.keyWindow.rootViewController;
+
+             if (topController != NULL) {
+                 [topController presentViewController:alert animated:YES completion:nil];
+             }
 #endif
             result(@0);
         }
