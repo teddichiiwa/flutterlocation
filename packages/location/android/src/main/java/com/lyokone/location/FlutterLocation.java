@@ -61,8 +61,8 @@ public class FlutterLocation
     private Double mLastMslAltitude;
 
     // Parameters of the request
-    private long updateIntervalMilliseconds = 5000;
-    private long fastestUpdateIntervalMilliseconds = updateIntervalMilliseconds / 2;
+    private long updateIntervalMilliseconds = 1000;
+    private long fastestUpdateIntervalMilliseconds = 1000;
     private Integer locationAccuracy = LocationRequest.PRIORITY_HIGH_ACCURACY;
     private float distanceFilter = 0f;
 
